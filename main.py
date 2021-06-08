@@ -32,6 +32,7 @@ Beneficiary_reference_id = "",
 District_id = ""
 Pincode_initials = ""
 
+CHROME_DRIVER_PATH = "/usr/local/Caskroom/chromedriver/91.0.4472.19/chromedriver"
 
 class Authentication:
     def __init__(self, mobile_number):
@@ -98,7 +99,7 @@ class Authentication:
         chrome_options = Options()
         chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 
-        chrome_driver = "/usr/local/Caskroom/chromedriver/91.0.4472.19/chromedriver"
+        chrome_driver = CHROME_DRIVER_PATH
         driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
         print(driver.title)
         htmlcode = driver.page_source.encode('utf-8')
